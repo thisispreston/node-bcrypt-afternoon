@@ -24,6 +24,8 @@ app.use(
 
 app.post('/auth/register', authCtrl.register)
 
+app.post('/auth/login', authCtrl.login)
+
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db);
 });
