@@ -23,8 +23,8 @@ app.use(
 );
 
 app.post('/auth/register', authCtrl.register)
-
 app.post('/auth/login', authCtrl.login)
+app.get('/auth/logout', authCtrl.logout)
 
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db);
