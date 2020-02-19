@@ -24,5 +24,12 @@ module.exports = {
     let newTreasure = await db.add_user_treasure(treasureURL, id)
 
     res.status(200).send(newTreasure)
+  },
+  getAllTreasure: async (req, res) => {
+    let db = req.app.get('db')
+
+    let getAll = await db.get_all_treasure()
+
+    res.status(200).send(getAll)
   }
 }
